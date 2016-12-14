@@ -1,16 +1,18 @@
 ## Build and test it:
-        Pin:
-MOSI:
-MISO:
-SCLK:
-SS0:
-SS1:
+
+| SPI Line  | GPIO Name | Pin#  |
+| --------- |:---------:| -----:|
+| MOSI      | GPIO10    | 19    |
+| MISO      | GPIO09    | 21    |
+| SCLK      | GPIO11    | 23    |
+| SS0       | GPIO08    | 24    |
+| SS1       | GPIO07    | 26    |
 
 Go to the project directory and type:
 ```bash
-make clean
-make
-./spi2ss.out
+$ make clean
+$ make
+$ ./spi2ss.out
 ```
 If you have MISO pin not connected you should get as result:
 ```bash
@@ -40,5 +42,5 @@ rx:0x55,0xc3,0x3c,0x01,0x80,0xff,0x00,
 
 ## TODO
 
-- []Improve makefile.
-- []Add LA capture pictures. 
+- [ ]Improve makefile.
+- [ ]Add LA capture pictures. 
