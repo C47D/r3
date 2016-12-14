@@ -2,8 +2,9 @@
 
 Collection of silly projects done for learning purposes.
 
-* spi2ss: Program that uses spidev to control 2 SPI slaves with the onboard 
-spi0.
+## Project list
+
+* spi2ss: Program that uses spidev to control 2 SPI slaves with spi0 device.
 
 ## Used Tools:
 * OS: Arch Linux ARM
