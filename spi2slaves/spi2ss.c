@@ -110,7 +110,7 @@ static void transfer(int fd){
     }
         printf("rx:");
     for(ret = 0; ret < sizeof(tx); ret++){
-        printf("%.2X", rx[ret]);
+        printf("%.2X,", rx[ret]);
     }
     printf("\r\n");
 }
