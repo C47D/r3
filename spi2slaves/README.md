@@ -1,7 +1,32 @@
+## Enable SPI interface
+From the awesome [Raspberry Pi]
+(https://wiki.archlinux.org/index.php/Raspberry_Pi#SPI) ARCH Linux Wiki:
+
+To enable the /dev/spidev* devices, add (or uncomment) the following line on 
+/boot/config.txt:
+
+```bash
+dtparam=spi=on
+```
+This will enable the spi0 device used in this example, then reboot the rpi3 and
+check if spi0 is sucesfully enabled with the following command:
+```bash
+$ls /dev/spi*
+/dev/spidev0.0 /dev/spidev0.1
+```
+Both devices are enuerated as following:
+spidevB.C where:
+
+B: SPI Device.
+C: Slave
+
+You had successfully enabled spi0, now you can continue to build and test the 
+proyect.
+
 ## Build and test it:
 
 | SPI Line  | GPIO Name | Pin#  |
-| --------- |:---------:| -----:|
+|:---------:|:---------:|:-----:|
 | MOSI      | GPIO10    | 19    |
 | MISO      | GPIO09    | 21    |
 | SCLK      | GPIO11    | 23    |
