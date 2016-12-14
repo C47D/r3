@@ -1,6 +1,8 @@
+APP=spi2ss
+
 all:
-	gcc -O2 -o spi2ss.out spi2ss.c
+	gcc -O2 -o $(APP).out $(APP).c
 asm:
-	gcc -O2 -S spi2ss.c
+	gcc -O2 -S $(APP).c
 clean:
 	rm *.out

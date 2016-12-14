@@ -7,9 +7,6 @@
 #include <linux/types.h>
 #include <linux/spi/spidev.h>
 
-static const char *slave0 = "/dev/spidev0.0";
-static const char *slave1 = "/dev/spidev0.1";
-
 static uint8_t mode = SPI_MODE_1;
 static uint8_t bits = 8;
 static uint32_t speed = 10000;
@@ -19,8 +16,11 @@ static void pabort(const char *s);
 static void transfer(int fd);
 
 int main(int argc, char *argv[]){
-    int ret = 0;
-    int ss0, ss1, counter;
+
+    int ss0, ss1;
+
+    const char *slave0 = "/dev/spidev0.0";
+    const char *slave1 = "/dev/spidev0.1";
 
     /* Slave configuration */
     printf("Configuring slave0\r\n");
@@ -45,12 +45,11 @@ int main(int argc, char *argv[]){
     transfer(ss1);
     close(ss1);
         
-    return ret;
+    return 0;
 }
 
 static int configSPI(const char *slave){
-    int ret = 0;
-    int SSfd;
+    int ret, SSfd;
 
 	/* Slave Select */
     SSfd = open(slave, O_RDWR);
