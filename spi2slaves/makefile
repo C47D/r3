@@ -1,8 +1,15 @@
-APP=spi2ss
+APP = spi2ss
+BINARY = $(APP)
 
-all:
-	gcc -O2 -o $(APP).out $(APP).c
-asm:
-	gcc -O2 -S $(APP).c
+# Compiler and  Compiler Flags
+CC = gcc
+CFLAGS = -O2 -Wall
+
+$(BINARY): $(APP).c
+	$(CC) $(CFLAGS) -o $(BINARY) $(APP).c
+asm: $(APP).c
+	$(CC) $(CFLAGS) -S $(APP).c
 clean:
-	rm *.out
+	rm -f $(BINARY)
+
+.PHONY: all asm clean

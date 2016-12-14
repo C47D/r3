@@ -41,7 +41,7 @@ Go to the project directory and type:
 ```bash
 $ make clean
 $ make
-$ ./spi2ss.out
+$ ./spi2ss
 ```
 If you have MISO pin not connected you should get as result:
 ```bash

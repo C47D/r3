@@ -1,1 +1,11 @@
-*.out
+# ignore everything ...
+*
+
+# ... but the following files ...
+!.gitignore
+!*.c
+!*.md
+!makefile
+
+# ... even on subdirectories
+!*/
