@@ -2,7 +2,9 @@
 From the awesome [Raspberry Pi Arch Linux Wiki]
 (https://wiki.archlinux.org/index.php/Raspberry_Pi#SPI):
 
-And Raspberry Pi Device Tree Overlay README
+And Raspberry Pi Device Tree Overlay README (see /boot/overlay/README)
+
+NOTE: spi1 is accesible in devices with the 40 pin header.
 
 > To enable the /dev/spidev* devices, add (or uncomment) the following line on 
 > /boot/config.txt:
@@ -14,7 +16,13 @@ And Raspberry Pi Device Tree Overlay README
 
 dtparam=spi=on will enable the SPI peripheral.
 dtoverlay=spi1-3cs will enable the spi1 device and 3 chip select (slave select)
-lines, this lines are by default at pin# , and .
+lines, by default this lines will be at GPIO# cs0=GPIO18, cs1=GPIO17 and
+ cs2=GPIO16.
+
+If you want to change the GPIO# add the parameter <cs#>=<GPIO#> (without 
+brackets) like so:
+
+dtoverlay=spi1-3cs,cs0=16,cs2=18
 
 Then reboot the rpi3 and check if spi1 is sucesfully enabled with the following
 command:
@@ -38,11 +46,12 @@ project.
 
 |**SPI Line**  | **GPIO Name** | **Pin#** |
 |:---------:|:---------:|:-----:|
-| MOSI      | GPIO10    | 19    |
-| MISO      | GPIO09    | 21    |
-| SCLK      | GPIO11    | 23    |
-| SS0       | GPIO08    | 24    |
-| SS1       | GPIO07    | 26    |
+| MOSI      | GPIO20    | 38    |
+| MISO      | GPIO19    | 35    |
+| SCLK      | GPIO21    | 40    |
+| SS0       | GPIO18    | 12    |
+| SS1       | GPIO17    | 11    |
+| SS2       | GPIO16    | 36    |
 
 Go to the project directory and type:
 ```bash

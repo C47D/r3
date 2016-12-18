@@ -44,13 +44,13 @@ int main(int argc, char *argv[]){
     transfer(ss0);
     close(ss0);
     
-    sleep(1);
+    usleep(250);
 
     printf("\tTransfer using slave 1\r\n");
     transfer(ss1);
     close(ss1);
         
-    sleep(1);
+    usleep(250);
 
     printf("\tTransfer using slave 2\r\n");
     transfer(ss2);

@@ -6,6 +6,7 @@
 !*.c
 !*.md
 !makefile
+!*.jpg
 
 # ... even on subdirectories
 !*/
