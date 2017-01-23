@@ -5,7 +5,7 @@
 !.gitignore
 !*.c
 !*.md
-!makefile
+!Makefile
 !*.png
 
 # ... even on subdirectories
